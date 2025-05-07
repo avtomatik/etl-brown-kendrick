@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: raw
+    description: >
+      Raw ingested datasets loaded verbatim into DuckDB.
+      No transformations are applied at this layer.
+
+    database: warehouse
+    schema: raw
+
+    tables:
+      - name: kendrick
+        description: >
+          Kendrick historical US macroeconomic series.
+          Source: J.W. Kendrick tables.
+
+        columns:
+          - name: period
+            description: Year (string in source)
+          - name: series_id
+            description: Kendrick series identifier
+          - name: value
+            description: Observed value
+
+      - name: brown
+        description: >
+          Murray G. Brown reconstructed macroeconomic series.
+
+        columns:
+          - name: period
+            description: Year (string in source)
+          - name: series_id
+            description: Brown series identifier
+          - name: value
+            description: Observed value

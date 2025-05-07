@@ -1,0 +1,18 @@
+sources:
+  brown:
+    path: data/raw/brown.zip
+    format: zip_json
+    data_file: data.json.gz
+    columns:
+      - series_id
+      - period
+      - value
+
+  kendrick:
+    path: data/raw/kendrick.zip
+    format: zip_json
+    data_file: data.json.gz
+    columns:
+      - series_id
+      - period
+      - value
