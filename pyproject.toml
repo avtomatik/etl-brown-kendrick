@@ -1,7 +1,7 @@
 [project]
 name = "fuse-usa-brown-kendrick"
 version = "0.1.0"
-description = "Data Fusion from M.G. Brown & J.W. Kendrick Sources."
+description = "ETL Pipeline for Data Fusion: M.G. Brown & J.W. Kendrick Macroeconomic Sources"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

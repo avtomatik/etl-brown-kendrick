@@ -17,4 +17,5 @@ models:
         tests:
           - not_null
           - dbt_utils.expression_is_true:
-              expression: "brown_0x2 >= 0"
+              arguments:
+                expression: "brown_0x2 >= 0"
