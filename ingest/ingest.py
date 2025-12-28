@@ -3,9 +3,9 @@ import tempfile
 import zipfile
 from pathlib import Path
 
+import duckdb
 import yaml
 
-import duckdb
 from ingest.config import SOURCES_YAML, WAREHOUSE
 
 

@@ -1,0 +1,6 @@
+etl_brown_kendrick:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: /app/data/processed/warehouse.duckdb

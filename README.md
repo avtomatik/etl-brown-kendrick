@@ -50,7 +50,7 @@ Ensure you have the following installed:
    Open the DuckDB CLI to explore your data:
 
    ```bash
-   $ duckdb duckdb/warehouse.duckdb
+   $ duckdb data/processed/warehouse.duckdb
    ```
 
 7. **Query the final table**:
@@ -70,15 +70,16 @@ Ensure you have the following installed:
 
 ```bash
 etl-brown-kendrick/
-├── dbt/                    # dbt models and configurations
+├── dbt/                     # dbt models and configurations
 │   ├── dbt_project.yml      # dbt project configuration
 │   ├── profiles.yml         # dbt profile for DuckDB
 │   └── models/              # dbt models (staging, intermediate, marts)
-├── ingest/                 # Data ingestion scripts
+├── ingest/                  # Data ingestion scripts
 │   └── cli.py               # Command-line interface for data ingestion
-├── duckdb/                 # DuckDB warehouse
-│   └── warehouse.duckdb     # Your final DuckDB database
-└── .venv/                  # Virtual environment
+├── data/
+|   └── processed/           # DuckDB warehouse
+│       └── warehouse.duckdb # Your final DuckDB database
+└── .venv/                   # Virtual environment
 ```
 
 ### How It Works
@@ -105,7 +106,7 @@ etl_brown_kendrick:
   outputs:
     dev:
       type: duckdb
-      path: ./duckdb/warehouse.duckdb
+      path: ./data/processed/warehouse.duckdb
 ```
 
 This configuration tells DBT how to connect to the **DuckDB warehouse**.

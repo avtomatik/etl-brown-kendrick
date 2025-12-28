@@ -1,0 +1,14 @@
+services:
+  etl:
+    build: .
+    container_name: etl-brown-kendrick
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./dbt:/app/dbt
+      - ./ingest:/app/ingest
+      - ./dbt_profiles:/app/dbt_profiles
+    working_dir: /app
+    tty: true
+    stdin_open: true
