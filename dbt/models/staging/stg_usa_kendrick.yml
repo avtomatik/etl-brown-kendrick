@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: stg_usa_kendrick
+    description: >
+      Typed, deduplicated Kendrick series.
+
+    columns:
+      - name: year
+        data_type: integer
+        tests:
+          - not_null
+
+      - name: series_id
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - KTA03S07
+                  - KTA03S08
+                  - KTA10S08
+                  - KTA15S07
+                  - KTA15S08
+
+      - name: value
+        tests:
+          - not_null

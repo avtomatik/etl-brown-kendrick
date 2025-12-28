@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: usa_brown_kendrick
+    description: >
+      Fused Brown–Kendrick macroeconomic series for the US.
+      This model reproduces Murray G. Brown’s reconstructed values.
+
+    tests:
+      - unique:
+          column_name: year
+
+    columns:
+      - name: brown_0x2
+        description: >
+          Capacity utilization-adjusted capital series.
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "brown_0x2 >= 0"

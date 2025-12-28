@@ -1,0 +1,14 @@
+name: "etl_brown_kendrick"
+version: "0.1.0"
+profile: "etl_brown_kendrick"
+
+model-paths: ["models"]
+
+models:
+  etl_brown_kendrick:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table
